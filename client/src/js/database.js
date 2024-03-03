@@ -41,7 +41,7 @@ export const getDb = async () => {
   console.log('GET from the database');
 
   // Create a connection to the database database and version we want to use.
-  const jateDb = await openDB('contact', 1);
+  const jateDb = await openDB('jate', 1);
 
   // Create a new transaction and specify the database and data privileges.
   const tx = jateDb.transaction('jate', 'readonly');
@@ -50,12 +50,13 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
 
   // Use the .getAll() method to get all data in the database.
-  const request = store.getAll();
-
-  // Get confirmation of the request.
+  const request = store.get(1);
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  result
+    ? console.log('🚀 - data retrieved from the database', result.value)
+    : console.log('🚀 - data not found in the database');
+
+  return result?.value;
 };
 
 initdb();
