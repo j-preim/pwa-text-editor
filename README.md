@@ -9,7 +9,7 @@ The purpose of this project was to build a text editor that runs in the browser.
 
 The project repository can be found at the following GitHub Page: https://github.com/j-preim/note-taker
 
-The deployed application can be found deployed on Heroku here: 
+The deployed application can be found deployed on Heroku here: https://morning-sierra-37960-92f8ddc7ee88.herokuapp.com/
 
 ## Usage
 
